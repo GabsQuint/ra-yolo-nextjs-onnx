@@ -2,19 +2,16 @@
 
 const highlights = [
   {
-    title: 'Inferência local e privada',
-    description:
-      'Carregue o modelo ONNX diretamente da pasta public/ e execute tudo no navegador, preservando seus dados sensíveis.',
+    title: 'Inferencia local',
+    description: 'O modelo ONNX roda inteiramente no navegador. Nenhum upload externo durante a analise.',
   },
   {
-    title: 'Aceleração automática',
-    description:
-      'Selecionamos WebGPU sempre que disponível e caímos para WebAssembly com SIMD e múltiplas threads para manter o fluxo fluido.',
+    title: 'Upload ou captura',
+    description: 'Escolha fotos da galeria ou use a camera do dispositivo via capture=environment em um toque.',
   },
   {
-    title: 'Ferramentas para diagnóstico',
-    description:
-      'Painéis de FPS, confiança mínima e mensagens de status ajudam a ajustar o desempenho e validar o modelo treinado.',
+    title: 'Historico anotado',
+    description: 'Cada execucao gera miniaturas com contagem por classe para comparar resultados rapidamente.',
   },
 ];
 
@@ -27,12 +24,11 @@ export default function HeroSection() {
         </div>
         <div className="space-y-5">
           <h1 className="text-4xl font-semibold leading-tight text-text-primary md:text-5xl">
-            Plataforma de visão computacional totalmente no navegador
+            Analise fotos com YOLO direto no navegador
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-text-subtle">
-            Conecte a câmera, carregue o seu modelo YOLO convertido para ONNX e explore resultados em
-            realidade aumentada sem back-end ou plugins. Ideal para demonstrações, inspeções em campo e
-            provas de conceito rápidas.
+            Carregue uma imagem da galeria ou capture uma foto na hora e visualize as deteccoes sobrepostas em segundos.
+            Sem back-end, plugins ou instalacao: apenas Next.js, Tailwind e onnxruntime-web.
           </p>
         </div>
         <ul className="grid gap-5 sm:grid-cols-3">
@@ -49,21 +45,20 @@ export default function HeroSection() {
         <div className="absolute bottom-10 left-10 h-40 w-40 rounded-full bg-accent-emphasis/20 blur-2xl" />
         <div className="relative space-y-5">
           <div className="rounded-2xl border border-border/60 bg-background/60 p-5">
-            <p className="text-sm font-semibold text-text-primary">Checklist rápido</p>
+            <p className="text-sm font-semibold text-text-primary">Checklist rapido</p>
             <p className="mt-2 text-xs leading-relaxed text-text-subtle">
-              1. Verifique o arquivo <span className="font-mono">public/models/best.onnx</span>.
+              1. Garanta o arquivo <span className="font-mono">public/models/best.onnx</span> exportado do YOLO.
               <br />
-              2. Atualize o navegador (Chrome ou Edge 123+).
+              2. Utilize Chrome ou Edge atualizados com WebGPU ativado.
               <br />
-              3. Ative permissões da câmera ao iniciar.
+              3. Permita acesso a camera apenas se desejar capturar novas imagens.
             </p>
           </div>
           <div className="rounded-2xl border border-border/60 bg-background/60 p-5">
-            <p className="text-sm font-semibold text-text-primary">Por baixo dos panos</p>
+            <p className="text-sm font-semibold text-text-primary">Tecnologia</p>
             <p className="mt-2 text-xs leading-relaxed text-text-subtle">
-              O frontend utiliza Next.js 14, Tailwind CSS e onnxruntime-web. Todo o pipeline roda em
-              WebAssembly ou WebGPU, com pré-processamento tipo letterbox e pós-processamento NMS
-              idênticos ao pipeline da família YOLO.
+              Empilhamos Next.js 14, Tailwind CSS e onnxruntime-web. O pre-processamento utiliza letterbox e o
+              pos-processamento aplica NMS classico da familia YOLO, tudo no browser.
             </p>
           </div>
         </div>

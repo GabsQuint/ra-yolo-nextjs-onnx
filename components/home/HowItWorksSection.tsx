@@ -3,18 +3,17 @@
 const steps = [
   {
     title: 'Prepare o modelo',
-    detail:
-      'Exporte o seu YOLO treinado como ONNX (opset ≥ 12) e copie o arquivo para public/models/best.onnx.',
+    detail: 'Exporte o seu YOLO como ONNX (opset >= 12) e coloque o arquivo em public/models/best.onnx.',
   },
   {
-    title: 'Execute no browser',
+    title: 'Envie ou capture fotos',
     detail:
-      'Clique em “Iniciar câmera”, conceda permissão e acompanhe as detecções renderizadas em tempo real sobre o vídeo.',
+      'Use o botao de upload para escolher imagens da galeria ou capture uma foto com a camera do dispositivo.',
   },
   {
-    title: 'Ajuste a sensibilidade',
+    title: 'Revise o historico',
     detail:
-      'Use os controles de confiança para equilibrar falsos positivos, monitore o FPS e compare WebGPU vs WASM conforme o hardware.',
+      'Analise as anotacoes geradas, ajuste o limiar de confianca e compare as miniaturas salvas automaticamente.',
   },
 ];
 
@@ -24,16 +23,15 @@ export default function HowItWorksSection() {
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-text-subtle/70">
-            Como operar
+            Como funciona
           </p>
           <h2 className="mt-1 text-2xl font-semibold text-text-primary">
-            Três etapas para levar seu modelo de laboratório ao campo
+            Três passos para inspecionar suas imagens com YOLO
           </h2>
         </div>
         <p className="max-w-2xl text-sm leading-relaxed text-text-subtle">
-          Esta aplicação foi pensada para apoiar equipes de P&amp;D e suporte técnico. Ela permite
-          validar modelos em linha de produção, fazer troubleshooting remoto ou criar demonstrações
-          interativas com total portabilidade.
+          Ideal para validar modelos de visao computacional, criar laudos rapidos ou demonstrar resultados para clientes
+          sem depender de servidores dedicados.
         </p>
       </div>
       <div className="mt-8 grid gap-6 md:grid-cols-3">
